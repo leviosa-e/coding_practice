@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getBoundingClientRect-lazyLoadImage</title>
+    <style>
+      li {
+        list-style: none;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 400px);
+      }
+
+      .container li {
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- 1 -->
+      <li>
+        <img
+          src="https://github.com/sanyuan0704/react-cloud-music/blob/master/src/assets/music.png?raw=true"
+          alt=""
+          data-src="https://p1.music.126.net/9iMZxYBIqRbBauWz4QItyA==/109951167394381508.jpg?param=140y140"
+        />
+      </li>
+      <li>
+        <img
+          src="https://github.com/sanyuan0704/react-cloud-music/blob/master/src/assets/music.png?raw=true"
+          alt=""
+          data-src="https://p1.music.126.net/9iMZxYBIqRbBauWz4QItyA==/109951167394381508.jpg?param=140y140"
+        />
+      </li>
+      <li>
+        <img
+          src="https://github.com/sanyuan0704/react-cloud-music/blob/master/src/assets/music.png?raw=true"
+          alt=""
+          data-src="https://p1.music.126.net/9iMZxYBIqRbBauWz4QItyA==/109951167394381508.jpg?param=140y140"
+        />
+      </li>
+      <!-- 2 -->
+      <li>
+        <img
+          src="https://github.com/sanyuan0704/react-cloud-music/blob/master/src/assets/music.png?raw=true"
+          alt=""
+          data-src="https://p1.music.126.net/9iMZxYBIqRbBauWz4QItyA==/109951167394381508.jpg?param=140y140"
+        />
+      </li>
+      <li>
+        <img
+          src="https://github.com/sanyuan0704/react-cloud-music/blob/master/src/assets/music.png?raw=true"
+          alt=""
+          data-src="https://p1.music.126.net/9iMZxYBIqRbBauWz4QItyA==/109951167394381508.jpg?param=140y140"
+        />
+      </li>
+      <li>
+        <img
+          src="https://github.com/sanyuan0704/react-cloud-music/blob/master/src/assets/music.png?raw=true"
+          alt=""
+          data-src="https://p1.music.126.net/9iMZxYBIqRbBauWz4QItyA==/109951167394381508.jpg?param=140y140"
+        />
+      </li>
+      <!-- 3 -->
+      <li>
+        <img
+          src="https://github.com/sanyuan0704/react-cloud-music/blob/master/src/assets/music.png?raw=true"
+          alt=""
+          data-src="https://p1.music.126.net/9iMZxYBIqRbBauWz4QItyA==/109951167394381508.jpg?param=140y140"
+        />
+      </li>
+      <li>
+        <img
+          src="https://github.com/sanyuan0704/react-cloud-music/blob/master/src/assets/music.png?raw=true"
+          alt=""
+          data-src="https://p1.music.126.net/9iMZxYBIqRbBauWz4QItyA==/109951167394381508.jpg?param=140y140"
+        />
+      </li>
+      <li>
+        <img
+          src="https://github.com/sanyuan0704/react-cloud-music/blob/master/src/assets/music.png?raw=true"
+          alt=""
+          data-src="https://p1.music.126.net/9iMZxYBIqRbBauWz4QItyA==/109951167394381508.jpg?param=140y140"
+        />
+      </li>
+      <!-- 4 -->
+      <li>
+        <img
+          src="https://github.com/sanyuan0704/react-cloud-music/blob/master/src/assets/music.png?raw=true"
+          alt=""
+          data-src="https://p1.music.126.net/9iMZxYBIqRbBauWz4QItyA==/109951167394381508.jpg?param=140y140"
+        />
+      </li>
+      <li>
+        <img
+          src="https://github.com/sanyuan0704/react-cloud-music/blob/master/src/assets/music.png?raw=true"
+          alt=""
+          data-src="https://p1.music.126.net/9iMZxYBIqRbBauWz4QItyA==/109951167394381508.jpg?param=140y140"
+        />
+      </li>
+      <li>
+        <img
+          src="https://github.com/sanyuan0704/react-cloud-music/blob/master/src/assets/music.png?raw=true"
+          alt=""
+          data-src="https://p1.music.126.net/9iMZxYBIqRbBauWz4QItyA==/109951167394381508.jpg?param=140y140"
+        />
+      </li>
+      <!-- 5 -->
+      <li>
+        <img
+          src="https://github.com/sanyuan0704/react-cloud-music/blob/master/src/assets/music.png?raw=true"
+          alt=""
+          data-src="https://p1.music.126.net/9iMZxYBIqRbBauWz4QItyA==/109951167394381508.jpg?param=140y140"
+        />
+      </li>
+      <li>
+        <img
+          src="https://github.com/sanyuan0704/react-cloud-music/blob/master/src/assets/music.png?raw=true"
+          alt=""
+          data-src="https://p1.music.126.net/9iMZxYBIqRbBauWz4QItyA==/109951167394381508.jpg?param=140y140"
+        />
+      </li>
+      <li>
+        <img
+          src="https://github.com/sanyuan0704/react-cloud-music/blob/master/src/assets/music.png?raw=true"
+          alt=""
+          data-src="https://p1.music.126.net/9iMZxYBIqRbBauWz4QItyA==/109951167394381508.jpg?param=140y140"
+        />
+      </li>
+    </div>
+    <script>
+      let images = document.querySelectorAll("img");
+      let imagesArr = Array.from(images);
+
+      function throttle(func, wait) {
+        let timer;
+
+        return function (...args) {
+          let _this = this;
+
+          timer = setTimeout(function () {
+            func.apply(_this, args);
+            clearTimeout(timer);
+          }, wait);
+        };
+      }
+
+      function isElementInView(element) {
+        const { top, height, left, width } = element.getBoundingClientRect();
+        const W = window.innerWidth || document.documentElement.clientWidth;
+        const H = window.innerHeight || document.documentElement.clientHeight;
+        return top <= H && top + height >= 0 && left <= W && left + width >= 0;
+      }
+
+      function handleLazyload() {
+        imagesArr.forEach((element) => {
+          if (isElementInView(element)) {
+            const realSrc = element.getAttribute("data-src");
+            element.setAttribute("src", realSrc); // OK
+            // element.src = realSrc; // OK
+          }
+        });
+      }
+
+      const throttleHandleLazyload = throttle(handleLazyload, 1000);
+
+      window.addEventListener("scroll", throttleHandleLazyload);
+    </script>
+  </body>
+</html>
